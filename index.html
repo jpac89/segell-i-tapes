@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#19392f">
+  <meta name="description" content="Bars, restaurants i cafès per practicar el català a prop de Calàbria, 66. Filtra per horari i distància a peu.">
+  <meta property="og:title" content="Segell i tapes · Sant Antoni">
+  <meta property="og:description" content="Tria on practicar el català i fer un mos després de classe.">
+  <title>Segell i tapes · Sant Antoni</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #24342d;
+      --muted: #536259;
+      --green: #19392f;
+      --cream: #f6f3eb;
+      --paper: #fffdf8;
+      --line: #dddcd0;
+      --gold: #f2ce75;
+      --green-soft: #e7efe5;
+      --red-soft: #f6e8e1;
+      --amber-soft: #f5ebd4;
+      --sans: 'Instrument Sans', system-ui, sans-serif;
+      --serif: 'DM Serif Text', Georgia, serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background: var(--cream); color: var(--ink); font: 15px/1.5 var(--sans); }
+    a { color: inherit; text-underline-offset: 3px; }
+    button, input, select { font: inherit; }
+    button, select, input[type="checkbox"] { cursor: pointer; }
+    :focus-visible { outline: 3px solid #b06c20; outline-offset: 3px; }
+    button { color: inherit; }
+    .wrap { width: min(1160px, calc(100% - 64px)); margin-inline: auto; }
+    .masthead { background: var(--green); color: var(--paper); }
+    .top { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 16px; border-bottom: 1px solid #ffffff30; }
+    .location { display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 650; }
+    .location::before { content: '✳'; color: var(--gold); font-size: 22px; }
+    .share { background: transparent; border: 1px solid #ffffff60; color: inherit; padding: 8px 14px; border-radius: 7px; min-height: 42px; font-weight: 650; }
+    .share:hover { background: #ffffff18; }
+    .hero { padding-block: 34px 39px; }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font: 400 clamp(54px, 8vw, 96px)/0.98 var(--serif); letter-spacing: -.056em; }
+    h1 em { font-style: italic; color: var(--gold); }
+    .hero p { margin-top: 17px; color: #edf1e7; font-size: clamp(15px, 2vw, 18px); }
+    .workspace { display: grid; grid-template-columns: 234px minmax(0, 1fr); gap: 36px; padding-block: 32px 42px; }
+    aside { align-self: start; border: 1px solid var(--line); background: var(--paper); border-radius: 12px; padding: 19px; position: sticky; top: 16px; }
+    .label, legend { display: block; font-size: 13px; font-weight: 750; margin-bottom: 7px; }
+    fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+    .categories { display: grid; gap: 4px; }
+    .category { border: 1px solid transparent; background: transparent; min-height: 42px; border-radius: 6px; padding: 8px 10px; text-align: left; }
+    .category:hover { background: var(--cream); }
+    .category[aria-pressed="true"] { border-color: #cad9cb; background: var(--green-soft); font-weight: 750; }
+    .filter-section { margin-top: 15px; padding-top: 15px; border-top: 1px solid var(--line); }
+    .controls { display: grid; gap: 13px; }
+    input[type="time"], select { min-height: 41px; padding: 7px 9px; border: 1px solid #cccec2; border-radius: 6px; background: var(--paper); color: var(--ink); width: 100%; }
+    .visit-time { display: flex; gap: 6px; }
+    .visit-time input { min-width: 0; }
+    .visit-time button { padding: 0 8px; border: 1px solid #cccec2; border-radius: 6px; background: var(--green-soft); font-size: 13px; }
+    input[type="checkbox"] { accent-color: var(--green); width: 17px; height: 17px; flex: 0 0 17px; margin: 2px 0 0; }
+    .check { display: flex; gap: 8px; align-items: start; font-size: 14px; }
+    .tip { margin-top: 15px; padding-top: 14px; border-top: 1px solid var(--line); }
+    .tip p { color: var(--muted); font-size: 13px; }
+    .tip summary { font-weight: 700; font-size: 13px; cursor: pointer; }
+    .tip p { margin-top: 7px; }
+    .summary { display: flex; flex-wrap: wrap; gap: 7px 15px; align-items: baseline; justify-content: space-between; margin-bottom: 12px; }
+    h2 { font: 400 clamp(31px, 4vw, 43px)/1.1 var(--serif); letter-spacing: -.04em; }
+    .date { color: var(--muted); font-size: 14px; font-weight: 550; }
+    .highlight { display: flex; align-items: center; justify-content: space-between; gap: 12px 20px; background: var(--green-soft); border: 1px solid #c9d9cc; border-radius: 9px; padding: 13px 15px; margin-bottom: 17px; }
+    .highlight p { font-size: 14px; }
+    .highlight a { white-space: nowrap; font-weight: 750; }
+    .list-meta { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 9px; margin-bottom: 12px; color: var(--muted); font-size: 13px; }
+    .sort { display: flex; align-items: center; gap: 8px; }
+    .sort select { min-height: 37px; width: auto; }
+    .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px; }
+    .card { background: var(--paper); border: 1px solid var(--line); border-radius: 11px; padding: 15px 16px; display: flex; flex-direction: column; min-width: 0; }
+    .card-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 7px; }
+    .kind { font-size: 12px; font-weight: 750; color: var(--muted); }
+    .distance { font-size: 13px; font-weight: 750; white-space: nowrap; color: var(--green); }
+    h3 { font: 400 26px/1.12 var(--serif); letter-spacing: -.027em; }
+    .address { color: var(--muted); font-size: 13px; margin-top: 4px; }
+    .pills { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; margin-top: 11px; }
+    .pill { border-radius: 5px; padding: 3px 7px; font-size: 12px; font-weight: 680; }
+    .open, .confirmed { background: var(--green-soft); color: #255138; }
+    .closed { background: var(--red-soft); color: #783e2e; }
+    .unconfirmed { background: var(--amber-soft); color: #704a14; }
+    .hours { font-size: 13px; color: var(--muted); margin-top: 8px; margin-bottom: 11px; }
+    .actions { margin-top: auto; padding-top: 10px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; align-items: center; gap: 5px 12px; }
+    .actions a { font-size: 13px; min-height: 32px; display: inline-flex; align-items: center; }
+    .actions a:first-child { font-weight: 750; }
+    .star { color: #8f5c10; margin-right: 4px; }
+    .muted { color: var(--muted); }
+    .empty { grid-column: 1/-1; background: var(--paper); padding: 22px; border: 1px dashed #aeb8aa; border-radius: 10px; }
+    .empty button { margin-top: 8px; background: var(--green); color: white; border: 0; border-radius: 5px; padding: 7px 10px; }
+    .sources { margin-top: 21px; color: var(--muted); font-size: 13px; }
+    .sources p + p { margin-top: 5px; }
+    #share-status { position: fixed; z-index: 2; bottom: 18px; left: 50%; transform: translateX(-50%); border-radius: 8px; padding: 9px 14px; background: var(--green); color: white; width: max-content; max-width: 90%; box-shadow: 0 3px 15px #0002; }
+    #share-status:empty { display: none; }
+    @media (max-width: 920px) { .workspace { grid-template-columns: 205px minmax(0,1fr); gap: 19px; } .wrap { width: calc(100% - 40px); } }
+    @media (max-width: 740px) { .workspace { grid-template-columns: 1fr; padding-top: 18px; } aside { position: static; padding: 13px; } .categories { display: flex; flex-wrap: wrap; gap: 5px; } .category { flex: 0 0 auto; border-color: var(--line); } .controls { grid-template-columns: 1fr 1fr; align-items: center; } .hero { padding-block: 26px 29px; } .top { min-height: 58px; } }
+    @media (max-width: 520px) { .wrap { width: calc(100% - 28px); } .cards { grid-template-columns: 1fr; } .highlight { align-items: start; } .card { padding: 14px; } }
+    @media (max-width: 350px) { .highlight { flex-direction: column; } .controls { grid-template-columns: 1fr; } }
+  </style>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Instrument+Sans:wght@400;500;600;700&display=swap">
+</head>
+<body>
+  <header class="masthead">
+    <div class="wrap">
+      <div class="top">
+        <p class="location">Sant Antoni, Barcelona</p>
+        <button type="button" class="share" id="share">Comparteix</button>
+      </div>
+      <div class="hero">
+        <h1>Segell <em>i tapes</em></h1>
+        <p>On practicar el català i fer un mos a prop de Calàbria, 66.</p>
+      </div>
+    </div>
+  </header>
+  <main class="workspace wrap">
+    <aside aria-label="Filtres">
+      <fieldset>
+        <legend>Tipus de local</legend>
+        <div class="categories" id="categories">
+          <button class="category" type="button" data-category="all" aria-pressed="true">Tots</button>
+          <button class="category" type="button" data-category="bar" aria-pressed="false">Bars i vermuteries</button>
+          <button class="category" type="button" data-category="restaurant" aria-pressed="false">Restaurants</button>
+          <button class="category" type="button" data-category="cafe" aria-pressed="false">Cafès</button>
+        </div>
+      </fieldset>
+      <div class="filter-section controls">
+        <div><label class="label" for="time">Hora de visita</label><div class="visit-time"><input type="time" id="time" value="20:00" required><button id="now" type="button">Ara</button></div></div>
+        <div><label class="label" for="radius">Temps a peu</label><select id="radius"><option value="5">Fins a 5 min</option><option value="10">Fins a 10 min</option><option value="20" selected>Fins a 20 min</option></select></div>
+        <label class="check"><input id="open-only" type="checkbox"> Només oberts a l’hora triada</label>
+        <label class="check"><input id="confirmed-only" type="checkbox"> Només a la llista de pràctiques</label>
+      </div>
+      <details class="tip">
+        <summary>Com demano el segell?</summary>
+        <p>«Bona tarda! Som alumnes de català. Podem fer la pràctica aquí? Ens podeu segellar el full, si us plau?»</p>
+      </details>
+    </aside>
+    <section aria-labelledby="results-title">
+      <div class="summary"><h2 id="results-title">On anem?</h2><p id="visit-date" class="date"></p></div>
+      <div class="highlight" id="highlight"></div>
+      <div class="list-meta"><p id="count" role="status"></p><label class="sort" for="sort">Ordena per <select id="sort"><option value="distance">Proximitat</option><option value="rating">Nota de Google</option></select></label></div>
+      <div class="cards" id="cards"></div>
+      <noscript><p>Activa JavaScript per veure la llista i utilitzar els filtres.</p></noscript>
+      <footer class="sources">
+        <p><strong>Pràctica CPNL</strong> indica que el local figura a la llista per a l’alumnat. Als altres locals del VxL, confirma si et poden segellar el full.</p>
+        <p>Horaris habituals, notes i rutes a peu consultats el 12/11/2026. Els horaris poden variar. <a href="https://www.vxl.cat/collaboradors-vxl/establiments?cnl=All&amp;sector=244&amp;comarca=5453&amp;municipi=6460" target="_blank" rel="noopener noreferrer">Directori VxL</a> · <a href="https://www.cpnl.cat/xarxa/cnlbarcelona/foment/practiques-linguistiques/" target="_blank" rel="noopener noreferrer">Pràctiques del CNL de Barcelona</a> · <a href="https://www.cpnl.cat/alumnes/practiques/" target="_blank" rel="noopener noreferrer">Llista CPNL</a></p>
+      </footer>
+    </section>
+  </main>
+  <div id="share-status" role="status"></div>
+  <script>
+    const origin = 'Carrer de Calàbria, 66, 08015 Barcelona';
+    const timezone = 'Europe/Madrid';
+    const weekdays = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+    const categoryNames = {bar:'Bar', restaurant:'Restaurant', cafe:'Cafè'};
+    const workweek = (intervals, saturday = [], sunday = []) => [intervals, intervals, intervals, intervals, intervals, saturday, sunday];
+    const daily = (intervals) => Array.from({length: 7}, () => intervals);
+    const places = [
+      {name:'Tempo', type:'cafe', address:'Carrer de Calàbria, 62', minutes:1, meters:36, rating:4.6, reviews:287, confirmed:true, phone:'931269440', cid:'0x1631623df6476cb1', hours:workweek([['08:30','16:30']])},
+      {name:'La Tata', type:'restaurant', address:'Carrer de Calàbria, 69', minutes:1, meters:95, rating:4.4, reviews:1885, confirmed:false, phone:'934262287', cid:'0x2f1329997ff4c143', hours:workweek([['06:00','23:45']],[['08:00','16:00'],['20:00','23:45']],[['10:00','16:00'],['20:00','23:45']]), hoursUrl:'https://latatabarcelona.es/es/contacto'},
+      {name:'El Xiquet', type:'bar', address:'Gran Via de les Corts Catalanes, 480', minutes:4, meters:260, rating:4.9, reviews:184, confirmed:false, phone:'744788000', cid:'0x1dbe2afaabc72187', hours:[[['18:00','24:00']],[['18:00','24:00']],[],[['18:00','24:00']],[['18:00','24:00']],[['12:00','16:00']],[['12:00','16:00']]]},
+      {name:'Lambicus Bar', type:'bar', address:'Carrer de Tamarit, 107', minutes:5, meters:350, rating:4.7, reviews:1231, confirmed:false, phone:'931707566', cid:'0x98f42e37c8517e87', hours:daily([['17:00','24:00']]), hoursUrl:'https://lambicus.com/bar/'},
+      {name:'Bracafè', type:'cafe', address:'Carrer del Comte d’Urgell, 35', minutes:7, meters:550, rating:4.0, reviews:753, confirmed:true, phone:'685925269', cid:'0x559559e1414d473d', hours:workweek([['07:00','13:00']])},
+      {name:'Can Vilaró', type:'restaurant', address:'Carrer del Comte Borrell, 61', minutes:7, meters:550, rating:4.4, reviews:1630, confirmed:false, phone:'933250578', cid:'0xc56b517f4595d897', hours:workweek([['08:30','15:30']])},
+      {name:'Cafè de les Delícies', type:'cafe', address:'Rambla del Raval, 47', minutes:19, meters:1400, rating:4.4, reviews:507, confirmed:true, phone:'934415714', cid:'0x263332ba1c6db1b4', hours:workweek([['09:30','16:30']])},
+      {name:'Espai Mallorca', type:'bar', address:'Plaça de Vicenç Martorell, 1', minutes:20, meters:1500, rating:4.5, reviews:565, confirmed:true, phone:'931728460', cid:'0xd916ed43276c6984', hours:[[['10:30','23:00']],[['10:30','23:00']],[['10:30','23:00']],[['10:30','24:00']],[['10:30','24:00']],[['10:30','24:00']],[['12:00','22:00']]]}
+    ];
+    const time = document.querySelector('#time');
+    const radius = document.querySelector('#radius');
+    const openOnly = document.querySelector('#open-only');
+    const confirmedOnly = document.querySelector('#confirmed-only');
+    const sort = document.querySelector('#sort');
+    const categories = document.querySelector('#categories');
+    const results = document.querySelector('#cards');
+    const highlight = document.querySelector('#highlight');
+    let weekday;
+    const number = new Intl.NumberFormat('ca', {maximumFractionDigits:1});
+    const rating = new Intl.NumberFormat('ca', {minimumFractionDigits:1, maximumFractionDigits:1});
+    let category = 'all';
+
+    function isOpen(place, selectedTime) {
+      return place.hours[weekday].some(([from, to]) => from <= selectedTime && selectedTime < to);
+    }
+
+    function walkLink(place) {
+      return 'https://www.google.com/maps/dir/?' + new URLSearchParams({api:'1', origin, destination:`${place.name}, ${place.address}, Barcelona`, travelmode:'walking'});
+    }
+
+    function mapsLink(place) {
+      return 'https://www.google.com/maps?cid=' + BigInt(place.cid).toString();
+    }
+
+    function byDistance(a, b) {
+      return a.meters - b.meters;
+    }
+
+    function card(place, selectedTime) {
+      const open = isOpen(place, selectedTime);
+      const hours = place.hours[weekday].map(([from, to]) => `${from}–${to}`).join(' · ') || 'Tancat tot el dia';
+      const distance = place.meters < 1000 ? `${place.meters} m` : `${number.format(place.meters / 1000)} km`;
+      return `<article class="card">
+        <div class="card-top"><span class="kind">${categoryNames[place.type]}</span><span class="distance">${place.minutes} min a peu · ${distance}</span></div>
+        <h3>${place.name}</h3><p class="address">${place.address}</p>
+        <div class="pills">
+          <span class="pill ${open ? 'open' : 'closed'}">${open ? 'Obert' : 'Tancat'} a les ${selectedTime}</span>
+          <span class="pill ${place.confirmed ? 'confirmed' : 'unconfirmed'}">${place.confirmed ? 'Pràctica CPNL' : 'VxL · confirma el segell'}</span>
+        </div>
+        <p class="hours">Avui · <a href="${place.hoursUrl || mapsLink(place)}" target="_blank" rel="noopener noreferrer">${hours}</a></p>
+        <div class="actions">
+          <a href="${walkLink(place)}" target="_blank" rel="noopener noreferrer" aria-label="Ruta a peu a ${place.name}">Ruta a peu ↗</a>
+          <a href="${mapsLink(place)}" target="_blank" rel="noopener noreferrer" aria-label="Google Maps i ressenyes de ${place.name}"><span class="star" aria-hidden="true">★</span>${rating.format(place.rating)}&nbsp;<span class="muted">(${number.format(place.reviews)}) · Google</span></a>
+          <a href="tel:+34${place.phone}" aria-label="Truca a ${place.name}">Truca</a>
+        </div>
+      </article>`;
+    }
+
+    function render() {
+      const date = new Date();
+      weekday = weekdays.indexOf(new Intl.DateTimeFormat('en', {weekday:'long', timeZone:timezone}).format(date));
+      document.querySelector('#visit-date').textContent = new Intl.DateTimeFormat('ca', {dateStyle:'full', timeZone:timezone}).format(date);
+      const selectedTime = time.value || '20:00';
+      const visible = places.filter(place =>
+        (category === 'all' || place.type === category) &&
+        place.minutes <= Number(radius.value) &&
+        (!openOnly.checked || isOpen(place, selectedTime)) &&
+        (!confirmedOnly.checked || place.confirmed)
+      );
+      const eligible = visible.find(place => place.confirmed && isOpen(place, selectedTime));
+      const exactTime = `A les <strong>${selectedTime}</strong>`;
+      highlight.innerHTML = eligible
+        ? `<p>${exactTime}, <strong>${eligible.name}</strong> figura a la llista de pràctiques i consta obert. És a ${eligible.minutes} min a peu.</p><a href="${walkLink(eligible)}" target="_blank" rel="noopener noreferrer">Com arribar-hi ↗</a>`
+        : `<p>${exactTime} no consta obert cap local de la llista de pràctiques amb aquests filtres.</p>`;
+      visible.sort(sort.value === 'rating' ? (a, b) => b.rating - a.rating || byDistance(a, b) : byDistance);
+      document.querySelector('#count').textContent = `${visible.length} ${visible.length === 1 ? 'lloc' : 'llocs'}`;
+      results.innerHTML = visible.length
+        ? visible.map(place => card(place, selectedTime)).join('')
+        : '<div class="empty"><p>Cap lloc amb aquests filtres.</p><button type="button" id="reset">Restableix els filtres</button></div>';
+    }
+
+    function selectCategory(value) {
+      category = value;
+      for (const button of categories.querySelectorAll('button')) {
+        button.setAttribute('aria-pressed', String(button.dataset.category === value));
+      }
+    }
+
+    categories.addEventListener('click', event => {
+      const button = event.target.closest('[data-category]');
+      if (!button) return;
+      selectCategory(button.dataset.category);
+      render();
+    });
+    for (const control of [time, radius, openOnly, confirmedOnly, sort]) control.addEventListener('change', render);
+    document.querySelector('#now').addEventListener('click', () => {
+      time.value = new Intl.DateTimeFormat('ca', {hour:'2-digit', minute:'2-digit', hourCycle:'h23', timeZone:timezone}).format(new Date());
+      render();
+    });
+    results.addEventListener('click', event => {
+      if (event.target.id !== 'reset') return;
+      selectCategory('all');
+      radius.value = '20';
+      openOnly.checked = false;
+      confirmedOnly.checked = false;
+      render();
+      categories.querySelector('[data-category="all"]').focus();
+    });
+    let shareMessageTimer;
+    document.querySelector('#share').addEventListener('click', async () => {
+      const status = document.querySelector('#share-status');
+      try {
+        if (location.protocol === 'file:') {
+          status.textContent = 'Comparteix el fitxer HTML amb el grup.';
+        } else {
+          const response = await fetch(location.href);
+          if (!response.ok) throw new Error('No es pot descarregar el fitxer');
+          const url = URL.createObjectURL(await response.blob());
+          const download = document.createElement('a');
+          download.href = url;
+          download.download = 'segell-i-tapes.html';
+          download.click();
+          setTimeout(() => URL.revokeObjectURL(url), 1000);
+          status.textContent = 'Envia el fitxer HTML descarregat al grup.';
+        }
+      } catch (error) {
+        status.textContent = 'Desa la pàgina com a fitxer HTML per compartir-la.';
+      }
+      clearTimeout(shareMessageTimer);
+      shareMessageTimer = setTimeout(() => { status.textContent = ''; }, 3500);
+    });
+    render();
+  </script>
+</body>
+</html>
