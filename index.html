@@ -94,8 +94,9 @@
     .empty button { margin-top: 8px; background: var(--green); color: white; border: 0; border-radius: 5px; padding: 7px 10px; }
     .sources { margin-top: 21px; color: var(--muted); font-size: 13px; }
     .sources p + p { margin-top: 5px; }
-    #share-status { position: fixed; z-index: 2; bottom: 18px; left: 50%; transform: translateX(-50%); border-radius: 8px; padding: 9px 14px; background: var(--green); color: white; width: max-content; max-width: 90%; box-shadow: 0 3px 15px #0002; }
-    #share-status:empty { display: none; }
+    #share-status:not(:empty) { margin-top: 10px; }
+    #share-manual:not([hidden]) { display: grid; gap: 5px; margin-top: 10px; max-width: 30rem; }
+    #share-url { width: 100%; min-width: 0; min-height: 41px; padding: 7px 9px; border: 1px solid var(--line); border-radius: 6px; color: var(--ink); background: var(--paper); }
     @media (max-width: 920px) { .workspace { grid-template-columns: 205px minmax(0,1fr); gap: 19px; } .wrap { width: calc(100% - 40px); } }
     @media (max-width: 740px) { .workspace { grid-template-columns: 1fr; padding-top: 18px; } aside { position: static; padding: 13px; } .categories { display: flex; flex-wrap: wrap; gap: 5px; } .category { flex: 0 0 auto; border-color: var(--line); } .controls { grid-template-columns: 1fr 1fr; align-items: center; } .hero { padding-block: 26px 29px; } .top { min-height: 58px; } }
     @media (max-width: 520px) { .wrap { width: calc(100% - 28px); } .cards { grid-template-columns: 1fr; } .highlight { align-items: start; } .card { padding: 14px; } }
@@ -110,6 +111,10 @@
         <p class="location">Sant Antoni, Barcelona</p>
         <button type="button" class="share" id="share">Comparteix</button>
       </div>
+      <p id="share-status" role="status"></p>
+      <label id="share-manual" hidden>Copia l’enllaç
+        <input type="url" id="share-url" readonly>
+      </label>
       <div class="hero">
         <h1>Segell <em>i tapes</em></h1>
         <p>On practicar el català i fer un mos a prop de Calàbria, 66.</p>
@@ -150,7 +155,6 @@
       </footer>
     </section>
   </main>
-  <div id="share-status" role="status"></div>
   <script>
     const origin = 'Carrer de Calàbria, 66, 08015 Barcelona';
     const timezone = 'Europe/Madrid';
@@ -267,28 +271,41 @@
       render();
       categories.querySelector('[data-category="all"]').focus();
     });
-    let shareMessageTimer;
-    document.querySelector('#share').addEventListener('click', async () => {
-      const status = document.querySelector('#share-status');
+    const shareButton = document.querySelector('#share');
+    const shareStatus = document.querySelector('#share-status');
+    const shareManual = document.querySelector('#share-manual');
+    const shareUrl = document.querySelector('#share-url');
+    shareButton.addEventListener('click', async () => {
+      if (shareButton.getAttribute('aria-busy') === 'true') return;
+      const url = location.protocol === 'file:'
+        ? 'https://jpac89.github.io/segell-i-tapes/'
+        : location.href;
+
+      shareButton.setAttribute('aria-busy', 'true');
+      shareStatus.textContent = '';
+      shareManual.hidden = true;
       try {
-        if (location.protocol === 'file:') {
-          status.textContent = 'Comparteix el fitxer HTML amb el grup.';
-        } else {
-          const response = await fetch(location.href);
-          if (!response.ok) throw new Error('No es pot descarregar el fitxer');
-          const url = URL.createObjectURL(await response.blob());
-          const download = document.createElement('a');
-          download.href = url;
-          download.download = 'segell-i-tapes.html';
-          download.click();
-          setTimeout(() => URL.revokeObjectURL(url), 1000);
-          status.textContent = 'Envia el fitxer HTML descarregat al grup.';
+        if (typeof navigator.share === 'function') {
+          try {
+            await navigator.share({title: document.title, url});
+            return;
+          } catch (error) {
+            if (error.name === 'AbortError') return;
+          }
         }
-      } catch (error) {
-        status.textContent = 'Desa la pàgina com a fitxer HTML per compartir-la.';
+
+        try {
+          await navigator.clipboard.writeText(url);
+          shareStatus.textContent = 'Enllaç copiat.';
+        } catch {
+          shareUrl.value = url;
+          shareManual.hidden = false;
+          shareUrl.focus();
+          shareUrl.select();
+        }
+      } finally {
+        shareButton.removeAttribute('aria-busy');
       }
-      clearTimeout(shareMessageTimer);
-      shareMessageTimer = setTimeout(() => { status.textContent = ''; }, 3500);
     });
     render();
   </script>
