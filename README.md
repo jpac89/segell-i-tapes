@@ -17,4 +17,8 @@ The current snapshot includes eight previously listed places. The group picker s
 - The original Eixample walking times are preserved. Other distances use straight-line distance with a walking factor and are labeled approximate. The device location is rounded in memory. Typed addresses and device coordinates stay out of the shared URL and outbound links. Maps can ask the visitor for a starting point when they open an external route.
 - Lato is hosted locally under the [SIL Open Font License](fonts/OFL.txt).
 
-The project code license, CPNL/VxL reuse, existing Google ratings and hosting terms after transfer remain open decisions. The GitHub Pages project lives under a repository path. GitHub only honors robots.txt at the host root, so this copy is useful on root deployments.
+CPNL/VxL reuse, existing Google ratings and hosting terms after transfer remain open decisions. The GitHub Pages project lives under a repository path. GitHub only honors robots.txt at the host root, so this copy is useful on root deployments.
+
+## License
+
+The original project code is available under the [MIT License](LICENSE). The Lato font and third-party data retain their own licenses and terms, as described above.

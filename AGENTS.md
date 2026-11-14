@@ -43,4 +43,4 @@ Security / privacy: `secure-web-api`, `secure-audit`, `secure-supply-chain`, `se
 Testing: `e2e-testing`, `browser-qa`. Backend later: `database-migrations`, `postgres-patterns`, `api-design`. Scoping: `grilling`.
 
 ## Open decisions (ask the owner, do not guess)
-Licence for the repo; which of the 27 VxL sectors go in; who maintains place data after the sale; reviews backend (likely Supabase, EU region); whether to keep Google ratings at all.
+Which VxL records can be included; who maintains place data after handover; reviews backend (likely Supabase, EU region); whether to keep Google ratings at all.
