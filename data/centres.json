@@ -1,0 +1,119 @@
+[
+  {
+    "id": "133",
+    "name": "CNL de Barcelona",
+    "address": "Direcció. C. de Quintana, 11, 3r 1a",
+    "coordinates": [
+      41.380909,
+      2.1747296
+    ]
+  },
+  {
+    "id": "423",
+    "name": "CNL Barcelona. Espai Avinyó - Llengua i Cultura",
+    "address": "C. Avinyó, 52, baixos",
+    "coordinates": [
+      41.3802299,
+      2.1790802
+    ]
+  },
+  {
+    "id": "682",
+    "name": "Acolliment lingüístic",
+    "address": "Pl. Catalunya, 9, 2n 1a",
+    "coordinates": [
+      41.3876228,
+      2.1687162
+    ]
+  },
+  {
+    "id": "342",
+    "name": "Delegació d'Horta-Guinardó",
+    "address": "C. Marina, 343",
+    "coordinates": [
+      41.4088249,
+      2.1687484
+    ]
+  },
+  {
+    "id": "134",
+    "name": "Delegació de Ciutat Vella",
+    "address": "C. Avinyó, 52",
+    "coordinates": [
+      41.3804741,
+      2.1790557
+    ]
+  },
+  {
+    "id": "341",
+    "name": "Delegació de Gràcia",
+    "address": "Av. de la Riera de Cassoles, 23",
+    "coordinates": [
+      41.4031143,
+      2.1496429
+    ]
+  },
+  {
+    "id": "343",
+    "name": "Delegació de Nou Barris",
+    "address": "C. Rosselló i Porcel, 12",
+    "coordinates": [
+      41.4370003,
+      2.1820199
+    ]
+  },
+  {
+    "id": "344",
+    "name": "Delegació de Sant Andreu",
+    "address": "C. Sant Adrià, 20 - recinte Fabra i Coats, edifici 15, 1r pis",
+    "coordinates": [
+      41.4331932,
+      2.1897223
+    ]
+  },
+  {
+    "id": "345",
+    "name": "Delegació de Sant Martí",
+    "address": "Gran Via de les Corts Catalanes, 866, 2n",
+    "coordinates": [
+      41.405365,
+      2.1903133
+    ]
+  },
+  {
+    "id": "340",
+    "name": "Delegació de Sants-Montjuïc",
+    "address": "C. Guitard, 17",
+    "coordinates": [
+      41.3805199,
+      2.1388364
+    ]
+  },
+  {
+    "id": "8879",
+    "name": "Delegació de Sarrià-Sant Gervasi",
+    "address": "Av. de la Riera de Cassoles, 23",
+    "coordinates": [
+      41.4051094,
+      2.1501231
+    ]
+  },
+  {
+    "id": "612",
+    "name": "Delegació de l'Eixample",
+    "address": "C. Calàbria, 66, 2n",
+    "coordinates": [
+      41.37841,
+      2.15693
+    ]
+  },
+  {
+    "id": "8878",
+    "name": "Delegació de les Corts",
+    "address": "C. Doctor Ibáñez, 38",
+    "coordinates": [
+      41.3878326,
+      2.1316667
+    ]
+  }
+]

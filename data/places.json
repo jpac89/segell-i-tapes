@@ -1,0 +1,479 @@
+[
+  {
+    "name": "Tempo",
+    "type": "cafe",
+    "address": "Carrer de Calàbria, 62",
+    "minutes": 1,
+    "meters": 36,
+    "rating": 4.6,
+    "reviews": 287,
+    "confirmed": true,
+    "phone": "931269440",
+    "cid": "0x1631623df6476cb1",
+    "hours": [
+      [
+        [
+          "08:30",
+          "16:30"
+        ]
+      ],
+      [
+        [
+          "08:30",
+          "16:30"
+        ]
+      ],
+      [
+        [
+          "08:30",
+          "16:30"
+        ]
+      ],
+      [
+        [
+          "08:30",
+          "16:30"
+        ]
+      ],
+      [
+        [
+          "08:30",
+          "16:30"
+        ]
+      ],
+      [],
+      []
+    ],
+    "coordinates": [
+      41.37809,
+      2.15734
+    ],
+    "sector": 244,
+    "source": "vxl",
+    "verifiedAt": "2026-11-12",
+    "hoursStatus": "verified"
+  },
+  {
+    "name": "La Tata",
+    "type": "restaurant",
+    "address": "Carrer de Calàbria, 69",
+    "minutes": 1,
+    "meters": 95,
+    "rating": 4.4,
+    "reviews": 1885,
+    "confirmed": false,
+    "phone": "934262287",
+    "cid": "0x2f1329997ff4c143",
+    "hours": [
+      [
+        [
+          "06:00",
+          "23:45"
+        ]
+      ],
+      [
+        [
+          "06:00",
+          "23:45"
+        ]
+      ],
+      [
+        [
+          "06:00",
+          "23:45"
+        ]
+      ],
+      [
+        [
+          "06:00",
+          "23:45"
+        ]
+      ],
+      [
+        [
+          "06:00",
+          "23:45"
+        ]
+      ],
+      [
+        [
+          "08:00",
+          "16:00"
+        ],
+        [
+          "20:00",
+          "23:45"
+        ]
+      ],
+      [
+        [
+          "10:00",
+          "16:00"
+        ],
+        [
+          "20:00",
+          "23:45"
+        ]
+      ]
+    ],
+    "hoursUrl": "https://latatabarcelona.es/es/contacto",
+    "coordinates": [
+      41.37811,
+      2.15694
+    ],
+    "sector": 244,
+    "source": "vxl",
+    "verifiedAt": "2026-11-12",
+    "hoursStatus": "verified"
+  },
+  {
+    "name": "El Xiquet",
+    "type": "bar",
+    "address": "Gran Via de les Corts Catalanes, 480",
+    "minutes": 4,
+    "meters": 260,
+    "rating": 4.9,
+    "reviews": 184,
+    "confirmed": false,
+    "phone": "744788000",
+    "cid": "0x1dbe2afaabc72187",
+    "hours": [
+      [
+        [
+          "18:00",
+          "24:00"
+        ]
+      ],
+      [
+        [
+          "18:00",
+          "24:00"
+        ]
+      ],
+      [],
+      [
+        [
+          "18:00",
+          "24:00"
+        ]
+      ],
+      [
+        [
+          "18:00",
+          "24:00"
+        ]
+      ],
+      [
+        [
+          "12:00",
+          "16:00"
+        ]
+      ],
+      [
+        [
+          "12:00",
+          "16:00"
+        ]
+      ]
+    ],
+    "coordinates": [
+      41.37989,
+      2.15603
+    ],
+    "sector": 244,
+    "source": "vxl",
+    "verifiedAt": "2026-11-12",
+    "hoursStatus": "verified"
+  },
+  {
+    "name": "Lambicus Bar",
+    "type": "bar",
+    "address": "Carrer de Tamarit, 107",
+    "minutes": 5,
+    "meters": 350,
+    "rating": 4.7,
+    "reviews": 1231,
+    "confirmed": false,
+    "phone": "931707566",
+    "cid": "0x98f42e37c8517e87",
+    "hours": [
+      [
+        [
+          "17:00",
+          "24:00"
+        ]
+      ],
+      [
+        [
+          "17:00",
+          "24:00"
+        ]
+      ],
+      [
+        [
+          "17:00",
+          "24:00"
+        ]
+      ],
+      [
+        [
+          "17:00",
+          "24:00"
+        ]
+      ],
+      [
+        [
+          "17:00",
+          "24:00"
+        ]
+      ],
+      [
+        [
+          "17:00",
+          "24:00"
+        ]
+      ],
+      [
+        [
+          "17:00",
+          "24:00"
+        ]
+      ]
+    ],
+    "hoursUrl": "https://lambicus.com/bar/",
+    "coordinates": [
+      41.37593,
+      2.15717
+    ],
+    "sector": 244,
+    "source": "vxl",
+    "verifiedAt": "2026-11-12",
+    "hoursStatus": "verified"
+  },
+  {
+    "name": "Bracafè",
+    "type": "cafe",
+    "address": "Carrer del Comte d’Urgell, 35",
+    "minutes": 7,
+    "meters": 550,
+    "rating": 4,
+    "reviews": 753,
+    "confirmed": true,
+    "phone": "685925269",
+    "cid": "0x559559e1414d473d",
+    "hours": [
+      [
+        [
+          "07:00",
+          "13:00"
+        ]
+      ],
+      [
+        [
+          "07:00",
+          "13:00"
+        ]
+      ],
+      [
+        [
+          "07:00",
+          "13:00"
+        ]
+      ],
+      [
+        [
+          "07:00",
+          "13:00"
+        ]
+      ],
+      [
+        [
+          "07:00",
+          "13:00"
+        ]
+      ],
+      [],
+      []
+    ],
+    "coordinates": [
+      41.38074,
+      2.16017
+    ],
+    "sector": 244,
+    "source": "vxl",
+    "verifiedAt": "2026-11-12",
+    "hoursStatus": "verified"
+  },
+  {
+    "name": "Can Vilaró",
+    "type": "restaurant",
+    "address": "Carrer del Comte Borrell, 61",
+    "minutes": 7,
+    "meters": 550,
+    "rating": 4.4,
+    "reviews": 1630,
+    "confirmed": false,
+    "phone": "933250578",
+    "cid": "0xc56b517f4595d897",
+    "hours": [
+      [
+        [
+          "08:30",
+          "15:30"
+        ]
+      ],
+      [
+        [
+          "08:30",
+          "15:30"
+        ]
+      ],
+      [
+        [
+          "08:30",
+          "15:30"
+        ]
+      ],
+      [
+        [
+          "08:30",
+          "15:30"
+        ]
+      ],
+      [
+        [
+          "08:30",
+          "15:30"
+        ]
+      ],
+      [],
+      []
+    ],
+    "coordinates": [
+      41.37788,
+      2.16175
+    ],
+    "sector": 244,
+    "source": "vxl",
+    "verifiedAt": "2026-11-12",
+    "hoursStatus": "verified"
+  },
+  {
+    "name": "Cafè de les Delícies",
+    "type": "cafe",
+    "address": "Rambla del Raval, 47",
+    "minutes": 19,
+    "meters": 1400,
+    "rating": 4.4,
+    "reviews": 507,
+    "confirmed": true,
+    "phone": "934415714",
+    "cid": "0x263332ba1c6db1b4",
+    "hours": [
+      [
+        [
+          "09:30",
+          "16:30"
+        ]
+      ],
+      [
+        [
+          "09:30",
+          "16:30"
+        ]
+      ],
+      [
+        [
+          "09:30",
+          "16:30"
+        ]
+      ],
+      [
+        [
+          "09:30",
+          "16:30"
+        ]
+      ],
+      [
+        [
+          "09:30",
+          "16:30"
+        ]
+      ],
+      [],
+      []
+    ],
+    "coordinates": [
+      41.37815,
+      2.17047
+    ],
+    "sector": 244,
+    "source": "vxl",
+    "verifiedAt": "2026-11-12",
+    "hoursStatus": "verified"
+  },
+  {
+    "name": "Espai Mallorca",
+    "type": "bar",
+    "address": "Plaça de Vicenç Martorell, 1",
+    "minutes": 20,
+    "meters": 1500,
+    "rating": 4.5,
+    "reviews": 565,
+    "confirmed": true,
+    "phone": "931728460",
+    "cid": "0xd916ed43276c6984",
+    "hours": [
+      [
+        [
+          "10:30",
+          "23:00"
+        ]
+      ],
+      [
+        [
+          "10:30",
+          "23:00"
+        ]
+      ],
+      [
+        [
+          "10:30",
+          "23:00"
+        ]
+      ],
+      [
+        [
+          "10:30",
+          "24:00"
+        ]
+      ],
+      [
+        [
+          "10:30",
+          "24:00"
+        ]
+      ],
+      [
+        [
+          "10:30",
+          "24:00"
+        ]
+      ],
+      [
+        [
+          "12:00",
+          "22:00"
+        ]
+      ]
+    ],
+    "coordinates": [
+      41.38416,
+      2.16944
+    ],
+    "sector": 244,
+    "source": "vxl",
+    "verifiedAt": "2026-11-12",
+    "hoursStatus": "verified"
+  }
+]
